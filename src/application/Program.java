@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -27,6 +28,10 @@ public class Program {
 		List<Seller> list2 = sellerDao.findAll();
 		list2.forEach(System.out::println);
 		
+		System.out.println("\n=== TEST 4: seller insert ===");
+		Seller seller2 = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
+		sellerDao.insert(seller2);
+		System.out.println("Inserted! New id: " + seller2.getId() + ";");
 		
 		
 	}
